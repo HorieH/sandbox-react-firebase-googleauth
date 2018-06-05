@@ -13,12 +13,12 @@ class App extends Component {
     })
   }
 
-  login = () => {
+  login() {
     const provider = new firebase.auth.GoogleAuthProvider()
     firebase.auth().signInWithRedirect(provider)
   }
 
-  logout = () => {
+  logout() {
     firebase.auth().signOut()
   }
 
@@ -30,9 +30,9 @@ class App extends Component {
         </p>
 
         {this.state.user ? (
-          <button onClick={() => this.logout()}>Google Logout</button>
+          <button onClick={this.logout}>Google Logout</button>
         ) : (
-          <button onClick={() => this.login()}>Google Login</button>
+          <button onClick={this.login}>Google Login</button>
         )}
       </div>
     )
